@@ -56,7 +56,6 @@ authRouter.put('/:model/:id', handleUpdate);
 authRouter.delete('/:model/:id', handleDelete);
 
 // RBAC Routes
-
 authRouter.get('/read', bearerAuth, permissions('read'), (req, res, next) => {
   res.status(200).send('OK, I now have read permissions');
 });
