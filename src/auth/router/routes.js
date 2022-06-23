@@ -57,11 +57,11 @@ authRouter.delete('/:model/:id', handleDelete);
 
 // RBAC Routes
 
-authRouter.get('/api/v2/read', bearerAuth, permissions('read'), (req, res, next) => {
+authRouter.get('/read', bearerAuth, permissions('read'), (req, res, next) => {
   res.status(200).send('OK, I now have read permissions');
 });
 
-authRouter.get('/api/v2/create', bearerAuth, permissions('create'), (req, res, next) => {
+authRouter.get('/create', bearerAuth, permissions('create'), (req, res, next) => {
   res.status(200).send('OK, I now have create permissions');
 });
 
