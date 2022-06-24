@@ -1,5 +1,5 @@
 {
-  "name": "grocery_list_gfmh",
+  "name": "auth-api",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -42,3 +42,4 @@
     "supertest": "^6.2.3"
   }
 }
+
