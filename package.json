@@ -4,12 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "lint": "eslint **/*.js",
-    "test": "NODE_ENV=test jest --verbose --coverage",
-    "test-watch": "NODE_ENV=test jest --watchAll --verbose --coverage",
-    "db:config": "sequelize init:config",
-    "db:create": "sequelize db:create"
+    "start": "NODE_ENV=production node index.js",
+    "dev": "NODE_ENV=development nodemon index.js",
+    "init:config": "sequelize init:config",
+    "db:create": "sequelize db:create",
+    "watch": "NODE_ENV=development nodemon index.js",
+    "test:watch": "NODE_ENV=test jest --watchAll",
+    "test": "NODE_ENV=test jest"
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "repository": {
     "type": "git",
@@ -38,3 +42,4 @@
     "supertest": "^6.2.3"
   }
 }
+
