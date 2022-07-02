@@ -11,11 +11,16 @@ class DataCollection {
   }
 
   get(id) {
-    if (id) {
-      return this.model.findOne({ id });
-    }
-    else {
-      return this.model.findAll({});
+    try {
+      if (id) {
+        return this.model.findOne({ id });
+      }
+      else {
+        return this.model.findAll({});
+      }
+    } catch (e) {
+      console.error(e.message);
+      return e;
     }
   }
 
@@ -29,7 +34,7 @@ class DataCollection {
   }
 
   delete(id) {
-    return this.model.destroy({ where: { id }});
+    return this.model.destroy({ where: { id } });
   }
 
 }
