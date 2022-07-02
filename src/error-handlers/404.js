@@ -13,8 +13,7 @@ function handle404(req, res, next) {
     status: 404,
     message: 'Sorry, we could not find what you were looking for'
   };
-
-  res.status(404).json(errorObject);
+  res.send(errorObject);
 }
 
 module.exports = handle404;
